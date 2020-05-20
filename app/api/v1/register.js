@@ -2,9 +2,8 @@ const Router = require('koa-router');
 const UserSrv = require('../../service/user')
 const router = new Router();
 
-router.post('/register',async (ctx, next) => {
+router.post('/public/register',async (ctx, next) => {
   const params= ctx.request.body
-  
   const res =  await UserSrv.register(params)
   console.log(res);
   
