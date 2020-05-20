@@ -1,10 +1,11 @@
 const Router = require('koa-router');
-
+const UserSrv = require('../../service/user')
 const router = new Router();
 
-router.get('/login', (ctx, next) => {
-  // ctx.router available
-  ctx.body="阿斯达"
+router.post('/login', async (ctx, next) => {
+  const params = ctx.request.body
+  const res = await UserSrv.verify(params)
+  ctx.body=res
 });
 
 module.exports = router
