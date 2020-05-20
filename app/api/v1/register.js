@@ -1,10 +1,15 @@
 const Router = require('koa-router');
-
+const UserSrv = require('../../service/user')
 const router = new Router();
 
-router.get('/register', (ctx, next) => {
-  ctx.body="注册成功"
-  // ctx.router available
+router.post('/register',async (ctx, next) => {
+  const params= ctx.request.body
+  
+  const res =  await UserSrv.register(params)
+  console.log(res);
+  
+  ctx.response.status = 200;
+  ctx.body = res
 });
 
 module.exports = router

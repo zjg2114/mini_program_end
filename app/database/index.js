@@ -4,6 +4,7 @@ const sequelize = new Sequelize('mini_program', 'root', '12345678', {
   host: 'localhost',
   dialect: 'mysql' 
 });
+
 // sequelize
 //   .authenticate()
 //   .then(() => {
