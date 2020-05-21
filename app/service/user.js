@@ -1,4 +1,4 @@
-const User = require("../model/user");
+const { User } = require("../models");
 const bcrypt = require("bcrypt");
 const jsonwebtoken = require('jsonwebtoken');
 const SECRET = require('../config/jwt')
@@ -38,7 +38,8 @@ class UserSrv {
 
     // 验证密码是否正确
     const correct = bcrypt.compareSync(password, userInfo.password);
-
+    console.log(41,correct);
+    
     if (!correct) {
       return { msg: "账号或密码不正确" };
     }

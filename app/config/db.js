@@ -5,7 +5,6 @@ module.exports= {
     database: "mini_program",
     host: "127.0.0.1",
     dialect: "mysql",
-    operatorsAliases: false,
   },
   production: {
     username: "joe",
@@ -13,6 +12,5 @@ module.exports= {
     database: "mini_program",
     host: "47.103.197.254",
     dialect: "mysql",
-    operatorsAliases: false,
   },
 };

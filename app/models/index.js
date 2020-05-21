@@ -5,11 +5,8 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config1 = require(__dirname + '/../../database/config.json')[env];
-const config2 = require(__dirname + '/../config/index.js').model;
+const config = require(__dirname + '/../config/db.js')[env];
 const db = {};
-
-const config = { ...config1, ...config2 };
 
 let sequelize;
 if (config.use_env_variable) {
@@ -33,15 +30,6 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
-
-// 连接数据库
-// sequelize.authenticate().then(() => {
-//   console.log('连接数据库成功')
-// }).catch(err => {
-//   console.log('连接数据库失败', err)
-// })
-// 同步数据库
-// sequelize.sync({ alter: true })
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
