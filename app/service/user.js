@@ -1,7 +1,7 @@
 const User = require("../model/user");
 const bcrypt = require("bcrypt");
 const jsonwebtoken = require('jsonwebtoken');
-const {SECRET} = require('../config')
+const SECRET = require('../config/jwt')
 
 
 class UserSrv {

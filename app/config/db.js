@@ -1,19 +1,18 @@
-const SECRET = "mini_program";
-const DB_CONFIG = {
+module.exports= {
   development: {
     username: "root",
     password: "12345678",
     database: "mini_program",
-    host: "localhost",
+    host: "127.0.0.1",
     dialect: "mysql",
+    operatorsAliases: false,
   },
   production: {
     username: "joe",
-    password: "zjg123456",
+    password: 'zjg742618',
     database: "mini_program",
     host: "47.103.197.254",
     dialect: "mysql",
+    operatorsAliases: false,
   },
 };
-
-module.exports = { SECRET, DB_CONFIG };

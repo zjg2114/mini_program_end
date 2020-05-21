@@ -6,7 +6,7 @@ const koaBody = require('koa-body');
 const koajwt = require('koa-jwt');
 const jsonwebtoken = require('jsonwebtoken');
 
-const {SECRET} = require('./app/config')
+const SECRET = require('./app/config/jwt')
 
 app.use(koaBody({
   multipart:true, // 支持文件上传
