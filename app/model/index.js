@@ -1,11 +1,15 @@
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
+const { DB_CONFIG } = require("../config");
 
-const sequelize = new Sequelize('mini_program', 'root', '12345678', {
-  host: 'localhost',
-  dialect: 'mysql' 
+const { username, password, database, host, dialect } =
+  process.env.NODE_ENV === "development"
+    ? DB_CONFIG.development
+    : DB_CONFIG.production;
+const sequelize = new Sequelize(database, username, password, {
+  host,
+  dialect,
 });
 
+sequelize.sync({ force: false });
 
-sequelize.sync({force: false})
-
-module.exports = sequelize
+module.exports = sequelize;
