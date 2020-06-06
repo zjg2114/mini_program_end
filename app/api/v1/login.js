@@ -5,6 +5,7 @@ const router = new Router();
 router.post('/public/login', async (ctx, next) => {
   const params = ctx.request.body
   const res = await UserSrv.verify(params)
+  console.log(res);
   ctx.body=res
 });
 

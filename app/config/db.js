@@ -8,7 +8,7 @@ module.exports= {
   },
   production: {
     username: "joe",
-    password: 'zjg742618',
+    password: 'zjg123456',
     database: "mini_program",
     host: "47.103.197.254",
     dialect: "mysql",
