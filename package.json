@@ -29,7 +29,7 @@
     "koa-logger": "^3.2.1",
     "koa-router": "^8.0.8",
     "koa-views": "^6.2.2",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "mysql2": "^2.1.0",
     "require-directory": "^2.1.1",
     "sequelize": "^5.21.9"
